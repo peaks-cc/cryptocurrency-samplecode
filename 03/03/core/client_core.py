@@ -19,7 +19,7 @@ class ClientCore:
 
     def __init__(self, my_port=50082, core_host=None, core_port=None):
         self.client_state = STATE_INIT
-        print('Initializing server...')
+        print('Initializing ClientCore...')
         self.my_ip = self.__get_myip()
         print('Server IP address is set to ... ', self.my_ip)
         self.my_port = my_port
