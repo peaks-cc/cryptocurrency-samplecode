@@ -43,8 +43,8 @@ class MessageManager:
         msg = json.loads(msg)
         msg_ver = StrictVersion(msg['version'])
         
-        cmd = msg['msg_type']
-        my_port = msg['my_port']
+        cmd = msg.get('msg_type')
+        my_port = msg.get('my_port')
         payload = msg.get('payload')
 
         if msg['protocol'] != PROTOCOL_NAME:
