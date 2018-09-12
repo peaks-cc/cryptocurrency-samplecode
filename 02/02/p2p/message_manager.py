@@ -45,7 +45,7 @@ class MessageManager:
         
         cmd = msg['msg_type']
         my_port = msg['my_port']
-        payload = msg['payload']
+        payload = msg.get('payload')
 
         if msg['protocol'] != PROTOCOL_NAME:
             return ('error', ERR_PROTOCOL_UNMATCH, None, None, None)
