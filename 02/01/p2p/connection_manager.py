@@ -96,7 +96,7 @@ class ConnectionManager:
         self.socket.bind((self.host, self.port))
         self.socket.listen(0)
 
-        executor = ThreadPoolExecutor(max_workers=os.cpu_count())
+        executor = ThreadPoolExecutor(max_workers=10)
 
         while True:
 
