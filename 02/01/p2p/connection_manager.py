@@ -2,6 +2,7 @@ import socket
 import threading
 import pickle
 import codecs
+import os
 from concurrent.futures import ThreadPoolExecutor
 
 from .core_node_list import CoreNodeList
@@ -122,7 +123,7 @@ class ConnectionManager:
 
         if not data_sum:
             return
-            
+
         result, reason, cmd, peer_port, payload = self.mm.parse(data_sum)
         print(result, reason, cmd, peer_port, payload)
         status = (result, reason)
