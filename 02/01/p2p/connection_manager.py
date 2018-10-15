@@ -122,7 +122,7 @@ class ConnectionManager:
 
         if not data_sum:
             return
-            
+
         result, reason, cmd, peer_port, payload = self.mm.parse(data_sum)
         print(result, reason, cmd, peer_port, payload)
         status = (result, reason)
