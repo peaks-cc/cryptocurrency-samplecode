@@ -1,5 +1,6 @@
 import Crypto
 import Crypto.Random
+import hashlib
 from Crypto.PublicKey import RSA
 
 
@@ -19,7 +20,7 @@ def main():
 
     pubkey, privkey = generate_rsa_key_pair()
 
-    hashed = SHA256.new(test_txt.encode('utf8')).digest()
+    hashed = hashlib.sha256(test_txt.encode('utf8')).digest()
     print('hashed :' , hashed)
     
     #公開鍵で暗号化
