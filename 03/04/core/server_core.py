@@ -64,7 +64,7 @@ class ServerCore(object):
             self.server_state = STATE_CONNECTED_TO_NETWORK # 状態：親ノードへ接続中
             self.cm.join_network(self.core_node_host, self.core_node_port)
         else:
-            print('This server is runnning as Genesis Core Node...')
+            print('This server is running as Genesis Core Node...')
 
     def shutdown(self):
         self.server_state = STATE_SHUTTING_DOWN # 状態：切断中
@@ -150,8 +150,8 @@ class ServerCore(object):
                     # ブロック生成が行われていたら一旦停止してあげる（threadingなのでキレイに止まらない場合あり）
                     if self.is_bb_running:
                         self.flag_stop_block_build = True 
-                    self.prev_block_hash = self.bm.get_hash(ew_block)
-                    self.bm.set_new_block(ew_block)
+                    self.prev_block_hash = self.bm.get_hash(new_block)
+                    self.bm.set_new_block(new_block)
                 else:
                     #　ブロックとして不正ではないがVerifyにコケる場合は自分がorphanブロックを生成している
                     #　可能性がある
